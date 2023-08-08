@@ -64,8 +64,8 @@ ul {
 #navbarTogglerDemo03 {
   justify-content: center;
   padding: 0.1rem;
-
 }
+
 
 /* ******* HEADER - MEDIA QUERIES ******* */
 
@@ -75,6 +75,10 @@ ul {
     display: inline;
     margin: 1rem;
   } */
+  .menu li, .menu a {
+    display: inline;
+    padding: 0.1rem 0.8rem;
+  }
 }
 
 /* ----------- MAIN INICIO -------------- */
