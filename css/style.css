@@ -1,0 +1,434 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #f2f2f2;
+}
+
+/* -------------- HEADER ---------------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.encabezado {
+  align-items: center;
+}
+
+.menu{
+  background-color: #252c30;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.logo img {
+  width: 120px;
+}
+
+ul {
+  list-style-type: none;
+}
+/* .menu li a */
+.menu a{
+  text-decoration: none;
+  color: #b0b9ac;
+  padding: 0.1rem;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.menu a.active {
+  color: #88b44e !important;
+}
+
+.menu a:hover {
+  color: #3a3b40;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+#navbarTogglerDemo03 {
+  justify-content: center;
+  padding: 0.1rem;
+
+}
+
+/* ******* HEADER - MEDIA QUERIES ******* */
+
+@media screen and (min-width:768px) {
+  
+  /* .menu li {
+    display: inline;
+    margin: 1rem;
+  } */
+}
+
+/* ----------- MAIN INICIO -------------- */
+
+.inicio-box{
+  height: 50vh;    
+  background-image: url(/img/logo/fondolaplata.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 25px;
+  color: aliceblue;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inicio-box span{
+  background: #b0b2bb7e;
+}
+.composta-box, .reciclaje-box, .energia-box{
+  height: 20vh;
+  font-size: 20px;
+  text-align: center;
+  margin: 1rem auto;
+}
+.button{
+  color: aliceblue;
+  background-color: #87a644;
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: .5rem;
+  font-size: small;
+}
+
+/* ----------- MAIN COMPOSTA / RECICLA -------------- */
+
+.titulo-pagina {
+  display: flex;
+  background-color: #7DBF1B;
+  color: #f2f2f2;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  height: 5vh;
+}
+
+.tarjetas {
+  display: flex;
+  flex-direction: column;
+  width:80%;
+  color: #252c30;
+  margin: 1rem auto;
+  border-radius: .5rem;
+  padding: .2rem;
+  background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
+  box-shadow: 0.4rem 0.4rem #b6b6b6;
+}
+
+.tarjetas img {
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0.5rem auto;
+  width: 80%;
+}
+
+.tarjetas p {
+  padding: 0.5rem;
+  text-align: justify;
+}
+
+/* ******* COMPOSTA Y RECICLA - MEDIA QUERIES ******* */
+
+@media screen and (min-width:992px) {
+  
+  .tarjetas div {
+    display: flex;
+  }
+
+  .tarjetas img {
+    width: 40%;
+    height: auto;
+  }
+
+  .tarjetas p {
+    display: inline;
+  }
+
+  .composta {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+}
+
+/* ----------- MAIN ENERGIA -------------- */
+
+.energia-grid {
+  display: grid;
+  width: 80%;
+  /* background-color: #b0b2bb; */
+  margin: 2rem auto;
+}
+
+.tip1, .tip2, .tip3, .tip4, .tip5, .tip6, .tip7, .tip8, .tip9 {
+    padding: 0.5rem;
+    margin: 1rem;
+    text-align: center;
+    background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.4rem 0.4rem #b6b6b6;
+  }
+
+.tips-title{
+  display: flex;
+  align-items: center;
+  color: #9abf49;
+  padding: 0.2rem;
+}
+.num{
+  border-radius: 100%;
+  display: inline-block;
+  padding: 0.6rem;
+  background-color: #9abf49;
+  color: white;
+  text-align: center;
+  margin: 1rem;
+  font-weight: bold;
+}
+
+.tip1 p, .tip2 p, .tip3 p, .tip4 p, .tip5 p, .tip6 p, .tip7 p, .tip8 p, .tip9 p {
+  padding: 0.5rem;
+  margin: 1rem;
+  text-align: left;
+}
+.grande{
+  display: flex;
+  height: 80%;
+  width: 80%;
+  margin: auto;
+}
+.grande img{
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+#space{
+  height: 1rem;
+}
+
+/* ******* ENERGIA - MEDIA QUERIES ******* */
+
+@media screen and (min-width:768px) {
+
+  .tips-title{
+    justify-content: center;
+  }
+  .energia-grid {
+    grid-template-areas: 
+    "tip1 tip2"
+    "tip3 tip4"
+    "tip5 tip6"
+    "tip7 tip8"
+    "tip9 tip9";
+    gap: 1rem;  
+  }
+  .tip1, .tip2, .tip3, .tip4, .tip5, .tip6, .tip7, .tip8, .tip9 {
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
+    padding: 0.5rem;
+    box-shadow: 0.4rem 0.4rem #b6b6b6;
+  }
+  .tip1 {
+    grid-area: tip1; 
+  }
+  .tip2 {
+    grid-area: tip2;
+  } 
+  .tip3 {
+    grid-area: tip3;
+  }
+  .tip4 {
+    grid-area: tip4;
+  }
+  .tip5 {
+    grid-area: tip5;  
+  }
+  .tip6 {
+    grid-area: tip6;
+  }
+  .tip7 {
+    grid-area: tip7;
+  }
+  .tip8 {
+    grid-area: tip8; 
+  }
+  .tip9 {
+    grid-area: tip9;
+  }
+}
+
+
+/* ----------- MAIN CONTACTO -------------- */
+
+.formulario {
+  display: flex;
+  width: 80%;
+  position: relative;
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+  padding: .5rem;
+}
+
+.formulario::before {
+    content: "";
+    background-image: url(/img/contacto/hojita.jpg);
+    background-size: cover;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+    z-index: -2;
+}
+
+input[type=text], input[type=email] {
+  display: block;
+  width: 70%;
+  padding: 0.5rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 0.3rem;
+}
+
+fieldset {
+  border: none;
+  padding: 0.5rem;
+}
+
+.botones-form {
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
+input[type=submit], input[type=reset] {
+  background-color: #555;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  text-decoration: none;
+  margin: 0.2rem 2rem;
+  cursor: pointer;
+}
+
+textarea {
+  width: 70%;
+  height: 8rem;
+  border: none;
+  border-radius: 0.5rem;
+  resize: none;
+  padding: 0.5rem;
+  margin: 0.8rem;
+}
+
+.ubicacion {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: center;
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+  padding: .5rem;
+  background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
+}
+
+iframe {
+  width: 100%;
+}
+
+#parrafo {
+  padding: 0.5rem;
+  text-align: justify;
+}
+
+/* ******* CONTACTO - MEDIA QUERIES ******* */
+
+@media screen and (min-width:768px) {
+  
+  .ubicacion {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* margin: 2rem auto; */
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  
+  .mapa {
+    grid-area: 1 / 1 / 4 / 2;
+  }
+}
+
+
+/* ----------- FOOTER -------------- */
+
+footer {
+  text-align: center;
+}
+
+.footer-container{
+  background-color: #1e2326;
+  color: #B0B9AE;
+}
+
+.footer-text{
+  padding: 0.5rem;
+  
+}
+.footer-text h4{
+  color: rgba(136, 180, 78, .7);
+  padding: 0.2rem;
+}
+
+.redes {
+  padding: 1rem;
+}
+
+.copyright{
+  padding: 0.4rem;
+  font-size: small;
+  text-align: left;
+  background-color: black;
+  color: #f2f2f25e;
+}
+
+/* ******* FOOTER - MEDIA QUERIES ******* */
+
+@media screen and (min-width:768px) {
+  .footer-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  .footer-text{
+    text-align: left;
+  }
+}
+
+

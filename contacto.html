@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/img/logo/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Karla&family=Montserrat&family=Nunito+Sans&family=Poppins&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Contacto | La Plata Verde</title>
+</head>
+<body>
+  <header>
+    <div class="encabezado">
+      <div class="logo">
+        <img src="img/logo/logo_new-removebg.png" alt="logo">
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">INICIO</a></li>
+          <li><a href="composta.html">COMPOSTAJE</a></li>
+          <li><a href="recicla.html">RECICLAJE</a></li>
+          <li><a href="energia.html">AHORRO DE ENERGIA</a></li>
+          <li><a class="active" href="contacto.html">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="titulo-pagina">
+      <h2>CONTACTANOS</h2>
+    </div>
+
+    <div class="formulario">
+      <form action="">
+        <div class="entradas">
+          <input type="text" name="nombre" id="nombre" placeholder="Tu nombre..." required>
+          <input type="email" name="mail" id="mail" placeholder="Tu e-mail..." required>
+        </div>
+
+        <fieldset>
+          <legend>¿De dónde sos?</legend>
+          <div>
+            <input type="radio" name="direccion" id="laplata">
+            <label for="laplata">La Plata</label>
+          </div>
+          <div>
+            <input type="radio" name="direccion" id="berisso">
+            <label for="berisso">Berisso</label>
+          </div>
+          <div>
+            <input type="radio" name="direccion" id="ensenada">
+            <label for="ensenada">Ensenada</label>
+          </div>
+          <div>
+            <input type="radio" name="direccion" id="tolosa">
+            <label for="tolosa">Tolosa</label>
+          </div>
+          <div>
+            <input type="radio" name="direccion" id="citybell">
+            <label for="citybell">City Bell</label>
+          </div>
+          <div>
+            <input type="radio" name="direccion" id="otro">
+            <label for="otro">Otro</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>¿Qué temas te interesan?</legend>
+          <div>
+            <input type="checkbox" name="reciclar" id="reciclar">
+            <label for="reciclart">Reciclar</label>
+          </div>
+          <div>
+            <input type="checkbox" name="compost" id="compost">
+            <label for="compost">Compostaje y huerta</label>
+          </div>
+          <div>
+            <input type="checkbox" name="energia" id="energia">
+            <label for="energia">Ahorrar energía</label>
+          </div>
+          <div>
+            <input type="checkbox" name="todo" id="todo">
+            <label for="todo">Todos</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dejanos tu comentario</legend>
+          <textarea name="comentario" id="comentario" cols="40" rows="10"></textarea>
+        </fieldset>
+        
+        <div class="botones-form">
+          <input type="reset" value="BORRAR">
+          <input type="submit" value="ENVIAR">
+        </div>
+        
+
+      </form>
+    
+
+    </div>
+  
+    <div class="ubicacion">
+      <div class="mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1635.7105391602213!2d-57.95446812017721!3d-34.92097509427587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1690240494434!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div>
+        <p id="parrafo">Suscribite a nuestro boletín y te avisamos cuando nos juntamos.</p>
+      </div>
+      <div>
+        <p id="parrafo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur debitis recusandae voluptatum odio optio maiores aut nisi exercitationem libero distinctio!</p>
+      </div>
+      
+      <div>
+        <p id="parrafo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit, nam!</p>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-text">
+        <h4>Email</h4>
+        <p>ejemplo@gmail.com</p>
+      </div>
+      <div class="footer-text">
+        <h4>Siguenos</h4>
+        <a class="redes" href="https://www.instagram.com/" target="_blank"><img src="img/logo/icons8-instagram.svg" alt=""></a>
+        <a class="redes" href="https://www.facebook.com/" target="_blank"><img src="img/logo/icons8-facebook.svg" alt=""></a>
+        <a class="redes" href="https://twitter.com/?lang=ES" target="_blank"><img src="img/logo/icons8-twitter.svg" alt=""></a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Grupo "A" Curso FrontEnd | Ingenias 2023</p>
+    </div>
+  </footer>
+</body>
+</html>
