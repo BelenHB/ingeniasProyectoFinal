@@ -20,6 +20,9 @@ header {
 
 .encabezado {
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
 }
 
 .menu{
@@ -134,16 +137,37 @@ ul {
   font-size: small;
 }
 
-@media screen and (min-widht:768px) {
+/* .carousel {
+    position: relative;
+    width: 70%;
+    margin: auto;
+    padding: 2rem 0;
+  } */
+
+@media screen and (min-width:992px) {
   
-  .carousel {
-    margin-left: 5rem;
-    margin-right: 5rem;
+  .carousel-modif {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    padding: 2rem 0;
+  }
+  .carousel-indicators {
+    margin-bottom: 3rem;
   }
 
-  .carousel img {
+  /* .carousel img {
     max-width: 80%;
     height: auto;
+  } */
+  /* .w-100 {
+    width: 80% !important;
+    max-height: 50rem !important;
+    margin: 1rem auto;
+  } */
+
+  .carousel-control-prev, .carousel-control-next {
+    width: 20%;
   }
   
 }
