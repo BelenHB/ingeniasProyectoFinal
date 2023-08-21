@@ -49,7 +49,6 @@ ul {
   align-items: center;
 }
 .menu a {
-/* .menu a{ */
   text-decoration: none;
   color: #b0b9ac;
   padding: 0.1rem;
@@ -74,37 +73,20 @@ ul {
 .navbar-toggler:focus {
   box-shadow: none;
 }
-/* #navbarTogglerDemo03 {
-  justify-content: center;
-  padding: 0.1rem;
-} */
-
-
 
 /* ******* HEADER - MEDIA QUERIES ******* */
 
 @media screen and (min-width:768px) {
-  
-  /* .menu li {
-    display: inline;
-    margin: 1rem;
-  } */
-  /* .menu li,  */
+
   .menu a {
     display: inline;
-    /* padding: 0.1rem 0.8rem; */
   }
-
-  
-  
-  
  
-  
 }
 
 /* ----------- MAIN INICIO -------------- */
 
-.inicio-box{
+/* .inicio-box{
   height: 50vh;    
   background-image: url(/img/logo/fondolaplata.jpg);
   background-size: cover;
@@ -116,17 +98,38 @@ ul {
   color: aliceblue;
   padding: 1rem;
   margin-bottom: 1rem;
+} */
+
+/* .inicio-box span{
+  background: #b0b2bb7e;
+} */
+.inicio {
+  width: 80%;
+  margin: 3rem auto;
+}
+.presentacion-box {
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.inicio-box span{
-  background: #b0b2bb7e;
+.presentacion-box h2 {
+  color: #88b44e;
+  font-weight: bolder;
 }
-.composta-box, .reciclaje-box, .energia-box{
-  height: 20vh;
-  font-size: 20px;
+
+.presentacion-box h3 {
+  color: #3a3b40;
+  font-style: italic;
+}
+
+.noticias-box {
   text-align: center;
-  margin: 1rem auto;
+  background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.4rem #b6b6b6;
 }
+
 .button{
   color: aliceblue;
   background-color: #87a644;
@@ -137,12 +140,6 @@ ul {
   font-size: small;
 }
 
-/* .carousel {
-    position: relative;
-    width: 70%;
-    margin: auto;
-    padding: 2rem 0;
-  } */
 
 @media screen and (min-width:992px) {
   
@@ -156,20 +153,20 @@ ul {
     margin-bottom: 3rem;
   }
 
-  /* .carousel img {
-    max-width: 80%;
-    height: auto;
-  } */
-  /* .w-100 {
-    width: 80% !important;
-    max-height: 50rem !important;
-    margin: 1rem auto;
-  } */
-
   .carousel-control-prev, .carousel-control-next {
     width: 20%;
   }
-  
+}
+
+/* ******* INICIO - MEDIA QUERIES ******* */
+
+@media screen and (min-width:1024px) {
+  .carousel-modif {
+    width: 70%;
+  }
+  .carousel-indicators {
+    margin-bottom: 4rem;
+  }
 }
 
 /* ----------- MAIN COMPOSTA / RECICLA -------------- */
@@ -237,7 +234,6 @@ ul {
 .energia-grid {
   display: grid;
   width: 80%;
-  /* background-color: #b0b2bb; */
   margin: 2rem auto;
 }
 
@@ -435,7 +431,6 @@ iframe {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    /* margin: 2rem auto; */
     justify-content: space-between;
     padding: 0.5rem;
   }
@@ -500,7 +495,7 @@ footer {
     height: 2rem;
   }
 
-  }
+}
 
 @media screen and (min-width:1024px) {
   .footer-text {
