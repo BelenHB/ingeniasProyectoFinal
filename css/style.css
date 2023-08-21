@@ -1,10 +1,10 @@
 *{
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body{
-  box-sizing: border-box;
   font-family: 'Nunito Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -30,7 +30,6 @@ header {
   text-align: center;
   padding: 0.5rem;
   align-items: center;
-
 }
 
 .logo {
@@ -44,10 +43,6 @@ header {
   width: 120px;
 }
 
-ul {
-  list-style-type: none;
-  align-items: center;
-}
 .menu a {
   text-decoration: none;
   color: #b0b9ac;
@@ -86,23 +81,6 @@ ul {
 
 /* ----------- MAIN INICIO -------------- */
 
-/* .inicio-box{
-  height: 50vh;    
-  background-image: url(/img/logo/fondolaplata.jpg);
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 25px;
-  color: aliceblue;
-  padding: 1rem;
-  margin-bottom: 1rem;
-} */
-
-/* .inicio-box span{
-  background: #b0b2bb7e;
-} */
 .inicio {
   width: 80%;
   margin: 3rem auto;
@@ -140,6 +118,7 @@ ul {
   font-size: small;
 }
 
+/* ******* INICIO - MEDIA QUERIES ******* */
 
 @media screen and (min-width:992px) {
   
@@ -158,8 +137,6 @@ ul {
   }
 }
 
-/* ******* INICIO - MEDIA QUERIES ******* */
-
 @media screen and (min-width:1024px) {
   .carousel-modif {
     width: 70%;
@@ -169,16 +146,22 @@ ul {
   }
 }
 
-/* ----------- MAIN COMPOSTA / RECICLA -------------- */
+/* -------- MAIN COMPOSTA / RECICLA / AHORRO ENERGÍA / CONTACTO ---------- */
+/* ----- ESTILOS COMPARTIDOS ------ */
 
 .titulo-pagina {
-  display: flex;
   background-color: #7DBF1B;
+  display: flex;
   color: #f2f2f2;
   justify-content: center;
   align-items: center;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   height: 5vh;
+  padding: 1.4rem;
+}
+
+.titulo-pagina h2 {
+  margin-bottom: 0;
 }
 
 .tarjetas {
@@ -188,9 +171,9 @@ ul {
   color: #252c30;
   margin: 1rem auto;
   border-radius: .5rem;
-  padding: .2rem;
+  padding: .8rem;
   background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
-  box-shadow: 0.4rem 0.4rem #b6b6b6;
+  box-shadow: 0.4rem 0.4rem #d6d6d6;
 }
 
 .tarjetas img {
@@ -198,6 +181,7 @@ ul {
   border-radius: 0.5rem;
   margin: 0.5rem auto;
   width: 80%;
+  object-fit: cover;
 }
 
 .tarjetas p {
@@ -239,12 +223,13 @@ ul {
 
 .tip1, .tip2, .tip3, .tip4, .tip5, .tip6, .tip7, .tip8, .tip9 {
     padding: 0.5rem;
-    margin: 1rem;
+    margin-bottom: 1rem;
     text-align: center;
     background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
     padding: 0.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0.4rem 0.4rem #b6b6b6;
+    box-shadow: 0.4rem 0.4rem #d6d6d6;
+    width: 100%;  
   }
 
 .tips-title{
@@ -253,33 +238,42 @@ ul {
   color: #9abf49;
   padding: 0.2rem;
 }
+
 .num{
   border-radius: 100%;
   display: inline-block;
-  padding: 0.6rem;
+  padding: 0.4rem;
   background-color: #9abf49;
   color: white;
   text-align: center;
-  margin: 1rem;
+  /* margin: 1rem; */
   font-weight: bold;
+}
+
+.tips-title h3 {
+  padding-left: .5rem;
+  margin-bottom: 0;
 }
 
 .tip1 p, .tip2 p, .tip3 p, .tip4 p, .tip5 p, .tip6 p, .tip7 p, .tip8 p, .tip9 p {
   padding: 0.5rem;
-  margin: 1rem;
   text-align: left;
 }
+
 .grande{
   display: flex;
   height: 80%;
   width: 80%;
   margin: auto;
 }
+
 .grande img{
   display: block;
   height: 100%;
   width: 100%;
+  border-radius: 0.5rem;
 }
+
 #space{
   height: 1rem;
 }
@@ -289,8 +283,9 @@ ul {
 @media screen and (min-width:768px) {
 
   .tips-title{
-    justify-content: center;
+    justify-content: left;
   }
+
   .energia-grid {
     grid-template-areas: 
     "tip1 tip2"
@@ -299,38 +294,40 @@ ul {
     "tip7 tip8"
     "tip9 tip9";
     gap: 1rem;  
+    grid-template-columns: 1fr 1fr;
   }
-  .tip1, .tip2, .tip3, .tip4, .tip5, .tip6, .tip7, .tip8, .tip9 {
-    border-radius: 1rem;
-    padding: 0.5rem;
-    background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
-    padding: 0.5rem;
-    box-shadow: 0.4rem 0.4rem #b6b6b6;
-  }
+  
   .tip1 {
     grid-area: tip1; 
   }
+
   .tip2 {
     grid-area: tip2;
   } 
+
   .tip3 {
     grid-area: tip3;
   }
+
   .tip4 {
     grid-area: tip4;
   }
+
   .tip5 {
     grid-area: tip5;  
   }
+
   .tip6 {
     grid-area: tip6;
   }
   .tip7 {
     grid-area: tip7;
   }
+
   .tip8 {
     grid-area: tip8; 
   }
+
   .tip9 {
     grid-area: tip9;
   }
@@ -341,7 +338,7 @@ ul {
 
 .formulario {
   display: flex;
-  width: 80%;
+  width: 90%;
   position: relative;
   border-radius: 0.5rem;
   margin: 2rem auto;
@@ -362,6 +359,11 @@ ul {
     z-index: -2;
 }
 
+form {
+  width: 100%;
+  display: inline-block;
+}
+
 input[type=text], input[type=email] {
   display: block;
   width: 70%;
@@ -376,9 +378,15 @@ fieldset {
   padding: 0.5rem;
 }
 
+fieldset legend {
+  font-size: 1rem;
+  font-weight: bold;
+  font-style: italic;
+}
+
 .botones-form {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: 1rem auto;
 }
 
@@ -389,7 +397,6 @@ input[type=submit], input[type=reset] {
   color: white;
   padding: 0.5rem 0.5rem;
   text-decoration: none;
-  margin: 0.2rem 2rem;
   cursor: pointer;
 }
 
@@ -406,7 +413,7 @@ textarea {
 .ubicacion {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 90%;
   justify-content: center;
   border-radius: 0.5rem;
   margin: 2rem auto;
@@ -420,7 +427,6 @@ iframe {
 
 #parrafo {
   padding: 0.5rem;
-  text-align: justify;
 }
 
 /* ******* CONTACTO - MEDIA QUERIES ******* */
@@ -430,13 +436,23 @@ iframe {
   .ubicacion {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr; */
     justify-content: space-between;
     padding: 0.5rem;
   }
   
   .mapa {
-    grid-area: 1 / 1 / 4 / 2;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .botones-form {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+  }
+
+  input[type=submit], input[type=reset] {
+    margin: 0 8rem;
   }
 }
 
@@ -454,9 +470,9 @@ footer {
 
 .footer-text{
   padding: 0.5rem;
-  
 }
-.footer-text h4{
+
+.footer-text h5{
   color: rgba(136, 180, 78, .7);
   padding: 0.2rem;
 }
@@ -466,11 +482,15 @@ footer {
 }
 
 .copyright{
-  padding: 0.4rem;
+  padding: 0.2rem;
   font-size: small;
-  text-align: left;
+  text-align: center;
   background-color: black;
   color: #f2f2f25e;
+}
+
+.copyright p, .footer-text p, .footer-text h4 {
+  margin-bottom: 0;
 }
 
 .footer-text img {
@@ -486,6 +506,7 @@ footer {
     justify-content: flex-end;
     align-items: flex-start;
   }
+
   .footer-text{
     text-align: left;
   }
@@ -503,8 +524,5 @@ footer {
   }
   
 }
-
-
-
 
 
