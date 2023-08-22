@@ -81,31 +81,39 @@ header {
 
 /* ----------- MAIN INICIO -------------- */
 
-.inicio {
+
+.presentacion-box {
   width: 80%;
   margin: 3rem auto;
-}
-.presentacion-box {
   text-align: center;
-  margin-bottom: 3rem;
+}
+.presentacion-box h1{
+  color: #f2f2f2;
+  background: #9abf49;
+  padding: 0.2rem;
+}
+.presentacion-box h2 {
+  
+  color: #3a3b40;
+  font-style: bolder;
 }
 
-.presentacion-box h2 {
+.presentacion-box h3 {
   color: #88b44e;
   font-weight: bolder;
 }
 
-.presentacion-box h3 {
-  color: #3a3b40;
-  font-style: italic;
+.inicio {
+  width: 80%;
+  margin: 3rem auto;
 }
-
 .noticias-box {
   text-align: center;
   background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
   padding: 0.5rem;
   border-radius: 0.5rem;
   box-shadow: 0.4rem 0.4rem #b6b6b6;
+  margin: 1rem;
 }
 
 .button{
