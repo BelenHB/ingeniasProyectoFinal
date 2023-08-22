@@ -352,7 +352,7 @@ header {
 
 .formulario::before {
     content: "";
-    background-image: url('../img/contacto/hojita.jpg');
+    background-image: url('./img/contacto/hojita.jpg');
     background-size: cover;
     border-radius: 0.5rem;
     position: absolute;
