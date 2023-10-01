@@ -389,7 +389,7 @@ button{
 /* ----------- MAIN CONTACTO -------------- */
 
 .formulario {
-  display: flex;
+  /* display: flex; */
   width: 90%;
   position: relative;
   border-radius: 0.5rem;

@@ -17,6 +17,16 @@
 
 function irInstagram()	{
   let ins = document.getElementById("insta");
-  document.getElementById("insta").innerHTML = ins.href = "https://www.instagram.com/"; 
+  ins.addEventListener("click", function (event) {
+    // document.getElementById("insta").innerHTML = 
+    ins.href = "https://www.instagram.com/"; 
+    event.preventDefault();
+  })
 }
+
+// let links = document.querySelector (‘a’);
+// links.addEventListener(‘click’, function(event){
+// console.log(‘hiciste click’)
+// event.preventDefault();
+// });
 
