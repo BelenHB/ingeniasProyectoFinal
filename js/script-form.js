@@ -4,9 +4,14 @@ let ejecutarEnviar = document.querySelector("#enviar");
 ejecutarEnviar.onclick = function () {
   let inputNombre = document.querySelector("input#nombre").value;
   let inputMail = document.querySelector("input#mail").value;
-  
-  document.querySelector(".formulario").innerHTML = `<p>Gracias <span><b> ${inputNombre}<span><b>.</p><p>Tus datos han sido enviados.</p>
-  <p>Nos contactaremos a la brevedad al correo <span><b>${inputMail}<span><b></p>`;
+  sessionStorage.setItem("usuario", inputNombre);
+  sessionStorage.setItem("mail", inputMail);
+
+  // document.querySelector(".formulario").innerHTML = `<p>Gracias <span><b> ${inputNombre}<span><b>.</p><p>Tus datos han sido enviados.</p>
+  // <p>Nos contactaremos a la brevedad al correo <span><b>${inputMail}<span><b></p>`;
+
+  document.querySelector(".formulario").innerHTML = `<p>Gracias <span><b> ${sessionStorage.getItem("usuario")}</b><span>.</p><p>Tus datos han sido enviados.</p>
+  <p>Nos contactaremos a la brevedad al correo <span><b>${sessionStorage.getItem("mail")}<span><b></p>`;
 
   // estilos al div
   document.querySelector(".formulario").style.display = "flex-block";
@@ -43,18 +48,8 @@ ejecutarEnviar.onclick = function () {
   document.querySelector(".formulario").appendChild(nuevosBotones);
   document.getElementById("nuevoDiv").appendChild(botonVolver);
   document.getElementById("nuevoDiv").appendChild(botonNuevoForm);
-  
-
-
 }
 
-// no funciona
-// let ejecutarSubmit = document.querySelector("#enviar");
-// ejecutarSubmit.addEventListener("submit", function(event){
-//   event.preventDefault();
-//   console.log("holis");
-//   let inputNombre = document.querySelector("input.nombre");
-//   document.querySelector(".formulario").innerHTML = `<h2>Gracias ${inputNombre},tus datos han sido enviados.</h2><h3>Nos contactaremos a la brevedad</h3>`;
-// })
+
 
 

@@ -121,6 +121,7 @@ header {
   padding: 8px;
   border-radius: .5rem;
   font-size: small;
+  font-weight: bolder;
 }
 
 /* ******* INICIO - MEDIA QUERIES ******* */
@@ -344,6 +345,12 @@ header {
   margin: 2rem auto;
 }
 
+.tarjetas p {
+  font-size: larger;
+  font-weight: bolder;
+  text-align: center;
+}
+
 .item-box {
   padding: 0.5rem;
   margin-bottom: 1rem;
@@ -354,6 +361,16 @@ header {
   box-shadow: 0.4rem 0.4rem #d6d6d6;
   width: 100%;  
 }
+
+.item-box-img {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;  
+}
+
 .item-img {
   display: block;
   height: 100%;
@@ -369,7 +386,21 @@ header {
 .item-text {
   color: #7DBF1B;
 }
-button{
+
+.box-botones {
+  display: flex;
+  padding: 0.5rem;
+  margin: 1rem auto;
+  text-align: center;
+  justify-content: space-around;
+  background-image: linear-gradient(to bottom right, #d8d8d8, #f2f2f2);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0.4rem 0.4rem #d6d6d6;
+  width: 80%;  
+}
+
+.boton-comprar {
   padding: 0.4rem;
   color:#9abf49;
   font-weight: bolder;
@@ -381,7 +412,8 @@ button{
 @media screen and (min-width:768px){
   .lista {
     grid-template-areas: 
-    "item1 item2 item3";
+    /* "item1 item2 item3"; */
+    "item item item";
     gap: 1rem;
   }
 }
