@@ -84,6 +84,9 @@ for (let i=0; i<productosArray.length; i++) {
   precio.className = "item-text";
   let botonComprar = document.createElement("button");
   botonComprar.className = "boton-comprar";
+  botonComprar.setAttribute("id", "selec-comprar");
+  // botonComprar.dataset("id",i);
+  botonComprar.setAttribute("onclick", "agregarAlCarrito()");
 
   imagen.src = productosArray[i].imagen;
   nombreProducto.innerText = productosArray[i].nombreProducto;
@@ -105,14 +108,24 @@ for (let i=0; i<productosArray.length; i++) {
 }
 
 
-/* <div class="item1">
-        <div class="item-box">
-          <img class="item-img" src="img/tienda/4.png" alt="Tarjeta">
-          <div>
-            <h4 class="item-title">Nuestra tarjeta</h4>
-            <p>Aliqu diam amet diam et eos. Clita erat ipsum lorem eipsum lorem sit sed</p>
-            <h4 class="item-text">$350.00</h4>
-            <button class="carrito" id="p1">COMPRAR</button>
-          </div>
-        </div>
-      </div> */
+let productosElegidos = document.querySelectorAll("#selec-comprar");
+console.log(productosElegidos);
+let carrito = [];
+// for (let i=0; productosElegidos.length; i++) {
+//   productosElegidos[i].addEventListener("click", function (event) {
+//     carrito.push(productosArray[i]);
+//     event.preventDefault();
+//   })
+// };
+
+
+// function agregarAlCarrito() {
+//   carrito.push(productosElegidos.indexOf
+//   console.log(to.nombreProducto);  
+// }
+
+//   let ver = document.getElementById("verCarrito");
+//   ver.addEventListener("click", function() {
+    
+//     console.log(carrito);
+//   });
