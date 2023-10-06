@@ -1,64 +1,20 @@
-// let productos = [
-//   {
-//     id: 1,
-//     nombreProducto: "Nuestra tarjeta",
-//     descripcion:"Para tu cuaderno, tu laptop o tu mochila. Decile al mundo que estás con nosotros.",
-//     precio: 350
-//   },
-//   {
-//     id: 2,
-//     nombreProducto:"Buzo",
-//     descripcion:"De algodón blanco con capucha, bolsillo canguro. Logo sublimado.",
-//     precio:4000,
-//   },
-//   {
-//     id: 3,
-//     nombreProducto:"Taza",
-//     descripcion:"De cerámica blanca con logo. Capacidad 220ml.",
-//     precio:1500,
-//   }
-// ];
-
-
-
-// let carrito = [];
-
-
-// document.getElementById("p1").addEventListener("click", function() {
-//   carrito.push(productos[0]);
-// });
-
-// document.getElementById("p2").addEventListener("click", function() {
-//   carrito.push(productos[1]);
-// });
-
-// document.getElementById("p3").addEventListener("click", function() {
-//   carrito.push(productos[2]);
-// });
-
-
-// mostrar carrito por consola
-// document.getElementById("verCarrito").addEventListener("click", function() {
-//   console.log(carrito);
-// });
-
 let productosJson = `[
   {
-    "id": 1,
+    "prodId": 0,
     "nombreProducto": "Nuestra tarjeta",
     "descripcion":"Para tu cuaderno, tu laptop o tu mochila. Decile al mundo que estás con nosotros.",
     "precio": 350,
     "imagen":"/img/tienda/4.png"
   },
   {
-    "id": 2,
+    "prodId": 1,
     "nombreProducto":"Buzo",
     "descripcion":"De algodón blanco con capucha, bolsillo canguro. Logo sublimado.",
     "precio":4000,
     "imagen":"/img/tienda/5.png"
   },
   {
-    "id": 3,
+    "prodId": 2,
     "nombreProducto":"Taza",
     "descripcion":"De cerámica blanca con logo. Capacidad 220ml.",
     "precio":1500,
@@ -67,7 +23,7 @@ let productosJson = `[
 ]`;
 
 let productosArray = JSON.parse(productosJson);
-// console.log(productosJson);
+// console.log(productosArray);
 
 
 for (let i=0; i<productosArray.length; i++) {
@@ -83,15 +39,13 @@ for (let i=0; i<productosArray.length; i++) {
   let precio = document.createElement("h4");
   precio.className = "item-text";
   let botonComprar = document.createElement("button");
-  botonComprar.className = "boton-comprar";
-  botonComprar.setAttribute("id", "selec-comprar");
-  // botonComprar.dataset("id",i);
-  botonComprar.setAttribute("onclick", "agregarAlCarrito()");
+  botonComprar.setAttribute("prodId", i);
+  botonComprar.addEventListener("click", agregarAlCarrito);
 
   imagen.src = productosArray[i].imagen;
   nombreProducto.innerText = productosArray[i].nombreProducto;
   descripcion.innerText = productosArray[i].descripcion;
-  precio.innerText = productosArray[i].precio;
+  precio.innerText = "$"+productosArray[i].precio;
   botonComprar.innerText = "COMPRAR";
   botonComprar.className = "button";
 
@@ -107,25 +61,35 @@ for (let i=0; i<productosArray.length; i++) {
 
 }
 
-
-let productosElegidos = document.querySelectorAll("#selec-comprar");
-console.log(productosElegidos);
 let carrito = [];
-// for (let i=0; productosElegidos.length; i++) {
-//   productosElegidos[i].addEventListener("click", function (event) {
-//     carrito.push(productosArray[i]);
-//     event.preventDefault();
-//   })
-// };
 
+function agregarAlCarrito(botonClickeado) {
+  let productosElegidos = [];
+  productosElegidos.push(botonClickeado.target.getAttribute("prodId"));
+  let numeroProducto = Number(botonClickeado.target.getAttribute("prodId"));
+  console.log(numeroProducto);
+  carrito.push(productosArray[numeroProducto]);
+  console.log(productosArray[numeroProducto]);
+  return carrito; 
+}
 
-// function agregarAlCarrito() {
-//   carrito.push(productosElegidos.indexOf
-//   console.log(to.nombreProducto);  
-// }
+let verCarrito = document.getElementById("verCarrito");
 
-//   let ver = document.getElementById("verCarrito");
-//   ver.addEventListener("click", function() {
-    
-//     console.log(carrito);
-//   });
+verCarrito.onclick = function () {
+  let comprado = document.createElement("div");
+  comprado.className = "tarjetas";
+  // console.log(carrito);
+  let tituloCompra = document.createElement("h4");
+  tituloCompra.innerText ="Tu carrito contiene:";
+  let listaCompra = document.createElement("ul");
+  for (x=0; x<carrito.length;x++) {
+    let productosComprados = document.createElement("li");
+    productosComprados.innerHTML = carrito[x].nombreProducto;
+    listaCompra.appendChild(productosComprados);
+  }
+  let divCompra = document.querySelector("#mostrar-carrito");
+  divCompra.appendChild(tituloCompra);
+  divCompra.appendChild(comprado);
+  comprado.appendChild(listaCompra);
+};
+
