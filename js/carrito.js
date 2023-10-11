@@ -4,21 +4,21 @@ let productosJson = `[
     "nombreProducto": "Nuestra tarjeta",
     "descripcion":"Para tu cuaderno, tu laptop o tu mochila. Decile al mundo que estás con nosotros.",
     "precio": 350,
-    "imagen":"/img/tienda/4.png"
+    "imagen":"img/tienda/4.png"
   },
   {
     "prodId": 1,
     "nombreProducto":"Buzo",
     "descripcion":"De algodón blanco con capucha, bolsillo canguro. Logo sublimado.",
     "precio":4000,
-    "imagen":"/img/tienda/5.png"
+    "imagen":"img/tienda/5.png"
   },
   {
     "prodId": 2,
     "nombreProducto":"Taza",
     "descripcion":"De cerámica blanca con logo. Capacidad 220ml.",
     "precio":1500,
-    "imagen":"/img/tienda/6.png"
+    "imagen":"img/tienda/6.png"
   }
 ]`;
 
