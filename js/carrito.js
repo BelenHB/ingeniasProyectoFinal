@@ -87,6 +87,7 @@ verCarrito.onclick = function () {
     productosComprados.innerHTML = carrito[x].nombreProducto;
     listaCompra.appendChild(productosComprados);
   }
+  // document.querySelector("#mostrar-carrito")
   let divCompra = document.querySelector("#mostrar-carrito");
   divCompra.appendChild(tituloCompra);
   divCompra.appendChild(comprado);
