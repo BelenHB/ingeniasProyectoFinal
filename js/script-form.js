@@ -1,3 +1,40 @@
+// Deshabilitar boton de enviar si no está completo
+// window.onload = () => {
+  let inputNombre = document.querySelector("#nombre");
+  // inputNombre.addEventListener("keyup", function () {
+  
+  inputNombre.addEventListener("change", () => {
+    let valorNombre = inputNombre.value;
+
+    
+    
+    
+    if (valorNombre.length >5) {
+      
+      console.log("completar nombre");
+      let botonEnviar = document.querySelector("#enviar");
+      botonEnviar.disabled = false;
+    } else {
+      console.log('no funciona');
+    };
+    // })
+    // };
+  });
+
+  // window.addEventListener("load", function () {
+  //   let inputNombre = document.querySelector("#nombre");
+  //   inputNombre.addEventListener("keyup", function(){
+  //   console.log('Entraste al input')
+  //   })
+  //   });
+
+
+
+
+
+
+
+
 // Modificación del div de formulario al presionar enviar
 
 let ejecutarEnviar = document.querySelector("#enviar");
@@ -37,6 +74,8 @@ ejecutarEnviar.onclick = function () {
   document.getElementById("nuevoDiv").appendChild(botonVolver);
   document.getElementById("nuevoDiv").appendChild(botonNuevoForm);
 }
+
+
 
 
 
