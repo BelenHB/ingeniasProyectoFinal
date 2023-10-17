@@ -84,42 +84,36 @@ inputs.forEach((input) => {
 // Se ejecuta al presionar enviar
 formulario.addEventListener('submit', (e) => {
   e.preventDefault();
-  
-  
+ 
 
 // Modificación del div de formulario al presionar enviar
-
-// let ejecutarEnviar = document.querySelector("#enviar");
-// ejecutarEnviar.onclick = function () {
-let inputNombre = document.querySelector("input#nombre").value;
-let inputMail = document.querySelector("input#mail").value;
-sessionStorage.setItem("usuario", inputNombre);
-sessionStorage.setItem("mail", inputMail);
-
- document.querySelector(".formulario").innerHTML = `<p>Gracias <span><b> ${sessionStorage.getItem("usuario")}</b><span>.</p><p>Tus datos han sido enviados.</p>
-<p>Nos contactaremos a la brevedad al correo <span><b>${sessionStorage.getItem("mail")}<span><b></p>`;
+  let inputNombre = document.querySelector("input#nombre").value;
+  let inputMail = document.querySelector("input#mail").value;
+  sessionStorage.setItem("usuario", inputNombre);
+  sessionStorage.setItem("mail", inputMail);
+  document.querySelector(".formulario").innerHTML = `<p>Gracias <span><b> ${sessionStorage.getItem("usuario")}</b><span>.</p><p>Tus datos han sido enviados.</p>
+  <p>Nos contactaremos a la brevedad al correo <span><b>${sessionStorage.getItem("mail")}  <span><b></p>`;
 
 // estilos al div
-document.querySelector(".formulario").classList.add('div-enviado');
+  document.querySelector(".formulario").classList.add('div-enviado');
 
-let nuevosBotones = document.createElement("div");
-nuevosBotones.id = "nuevoDiv";
-nuevosBotones.style.display ="flex";
-nuevosBotones.style.justifyContent = "space-around";
-nuevosBotones.style.margin = "1rem auto";
+  let nuevosBotones = document.createElement("div");
+  nuevosBotones.id = "nuevoDiv";
+  nuevosBotones.style.display ="flex";
+  nuevosBotones.style.justifyContent = "space-around";
+  nuevosBotones.style.margin = "1rem auto";
 
-let botonVolver =document.createElement("button");
-botonVolver.innerHTML = "<a href='index.html' style='text-decoration:none; color:#f2f2f2; font-size:1rem'>INICIO</a>";
-botonVolver.className = "button";
+  let botonVolver =document.createElement("button");
+  botonVolver.innerHTML = "<a href='index.html' style='text-decoration:none;   color:#f2f2f2; font-size:1rem'>INICIO</a>";
+  botonVolver.className = "button";
 
-let botonNuevoForm =document.createElement("button");
-botonNuevoForm.innerHTML = "<a href='contacto.html' style='text-decoration:none; color:#f2f2f2; font-size:1rem'>NUEVO FORMULARIO</a>";
-botonNuevoForm.className = "button";
+  let botonNuevoForm =document.createElement("button");
+  botonNuevoForm.innerHTML = "<a href='contacto.html' style='text-decoration:none;   color:#f2f2f2; font-size:1rem'>NUEVO FORMULARIO</a>";
+  botonNuevoForm.className = "button";
 
-document.querySelector(".formulario").appendChild(nuevosBotones);
-document.getElementById("nuevoDiv").appendChild(botonVolver);
-document.getElementById("nuevoDiv").appendChild(botonNuevoForm);
-// };
+  document.querySelector(".formulario").appendChild(nuevosBotones);
+  document.getElementById("nuevoDiv").appendChild(botonVolver);
+  document.getElementById("nuevoDiv").appendChild(botonNuevoForm);
 
 });
 
