@@ -474,14 +474,16 @@ fieldset legend {
   margin: 1rem auto;
 }
 
-input[type=submit], input[type=reset] {
-  background-color: #555;
-  border: none;
+input[type=submit], input[type=reset],
+ button[type=submit], button[type=reset] {
+  /* background-color: #555; */
+  /* border: none; */
   border-radius: 0.5rem;
   color: white;
   padding: 0.5rem 0.5rem;
   text-decoration: none;
-  cursor: pointer;
+  /* cursor: pointer; */
+  margin: 0 4rem;
 }
 
 textarea {
@@ -511,6 +513,26 @@ iframe {
 
 #parrafo {
   padding: 0.5rem;
+}
+
+.oculto {
+  display: none;
+}
+
+#nombre.is-valid, #mail.is-valid {
+  background-color: rgb(163, 191, 122);
+  color: rgb(242, 242, 242);
+  font-weight: bold;
+}
+
+.div-enviado {
+  display: flexbox;
+  width: 90%;
+  background: #9b9b9b;
+  color: rgb(49 53 47);
+  font-size: 2rem;
+  font-style: italic;
+  text-align: center;
 }
 
 /* ******* CONTACTO - MEDIA QUERIES ******* */

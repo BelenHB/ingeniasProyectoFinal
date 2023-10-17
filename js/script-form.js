@@ -1,7 +1,7 @@
 // Deshabilitar boton de enviar si no está completo
-// window.onload = () => {
+
   let inputNombre = document.querySelector("#nombre");
-  // inputNombre.addEventListener("keyup", function () {
+
   
   inputNombre.addEventListener("change", () => {
     let valorNombre = inputNombre.value;
@@ -17,16 +17,9 @@
     } else {
       console.log('no funciona');
     };
-    // })
-    // };
-  });
+   });
 
-  // window.addEventListener("load", function () {
-  //   let inputNombre = document.querySelector("#nombre");
-  //   inputNombre.addEventListener("keyup", function(){
-  //   console.log('Entraste al input')
-  //   })
-  //   });
+ 
 
 
 
