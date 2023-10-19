@@ -25,7 +25,7 @@ let productosJson = `[
 let productosArray = JSON.parse(productosJson);
 // console.log(productosArray);
 
-
+// Visualizar los productos en el HTML
 for (let i=0; i<productosArray.length; i++) {
   let producto = document.createElement("article");
   producto.className = "item-box";
@@ -56,41 +56,97 @@ for (let i=0; i<productosArray.length; i++) {
   producto.appendChild(precio);
   producto.appendChild(botonComprar);
 
-
   document.querySelector("div.lista").appendChild(producto);
-
 }
 
+
+// Armar el carrito
 let carrito = [];
 
 function agregarAlCarrito(botonClickeado) {
   let productosElegidos = [];
   productosElegidos.push(botonClickeado.target.getAttribute("prodId"));
+  // console.log(productosElegidos);
   let numeroProducto = Number(botonClickeado.target.getAttribute("prodId"));
-  console.log(numeroProducto);
+  // console.log(numeroProducto);
   carrito.push(productosArray[numeroProducto]);
-  console.log(productosArray[numeroProducto]);
+  // console.log(productosArray[numeroProducto]);
+  // console.log(carrito);
   return carrito; 
 }
 
 let verCarrito = document.getElementById("verCarrito");
 
 verCarrito.onclick = function () {
+// Habilito el botón de "BORRAR CARRITO"
+  if (carrito.length != 0) {
+    document.getElementById("eliminarCarrito").disabled = false;
+  } else {
+    document.getElementById("eliminarCarrito").disabled = true;
+  };
+
+// Armado del html para visualizar el carrito
+  document.querySelector("#mostrar-carrito").classList.remove('oculto');
   let comprado = document.createElement("div");
-  comprado.className = "tarjetas";
+  comprado.className = "listado-compra";
   // console.log(carrito);
-  let tituloCompra = document.createElement("h4");
-  tituloCompra.innerText ="Tu carrito contiene:";
+  let tituloCompra = document.createElement("h5");
+  tituloCompra.className = 'titulo-carrito';
+  tituloCompra.innerText ="TU CARRITO CONTIENE:";
   let listaCompra = document.createElement("ul");
-  for (x=0; x<carrito.length;x++) {
-    let productosComprados = document.createElement("li");
-    productosComprados.innerHTML = carrito[x].nombreProducto;
-    listaCompra.appendChild(productosComprados);
+  for (let x=0; x<carrito.length;x++) {
+    // let productosComprados = document.createElement("li");
+    // productosComprados.innerHTML = carrito[x].nombreProducto;
+    // listaCompra.appendChild(productosComprados);
+    listaCompra.innerHTML += `<li>
+    <img src="${carrito[x].imagen}" width="50px" height="50px" alt="">
+    <p>${carrito[x].nombreProducto}</p>
+    <p>1 u.</p>
+    <p>$${carrito[x].precio}</p>
+  </li>`;
   }
+
+  let totalDeCompra = document.createElement('h5');
+  let total = 0;
+  for (let x=0; x<carrito.length;x++) {
+    let importe = Number(carrito[x].precio);
+    console.log(importe);
+    console.log(typeof(importe));
+    console.log(x);
+    total += importe;
+  };
+  totalDeCompra.innerText = `El total de tu compra es $${total}`;
+
   // document.querySelector("#mostrar-carrito")
   let divCompra = document.querySelector("#mostrar-carrito");
   divCompra.appendChild(tituloCompra);
+
   divCompra.appendChild(comprado);
+ 
   comprado.appendChild(listaCompra);
+
+  comprado.appendChild(totalDeCompra);
+  
+  // verCarrito.disabled = true;
+  // o podría ocultarse y aparecer el de agregar
+  // faltaría hacer la función agregar
+  // document.getElementById('agregarAlCarrito').classList.remove('oculto');
+
 };
+
+// Ejecución de BORRAR CARRITO
+let borrarCarrito = document.getElementById("eliminarCarrito");
+
+borrarCarrito.onclick = function (e) {
+  e.preventDefault();
+  // console.log(carrito);
+  for (let i = 0;carrito.length;i++) {
+    carrito.pop();
+  }
+  // console.log(carrito);
+  document.querySelector("#mostrar-carrito").removeChild(document.querySelector('.titulo-carrito'));
+  document.querySelector("#mostrar-carrito").removeChild(document.querySelector('.listado-compra'));
+  document.querySelector("#mostrar-carrito").classList.add('oculto');
+};
+
 

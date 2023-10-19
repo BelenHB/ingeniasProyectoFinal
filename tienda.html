@@ -50,13 +50,19 @@
     <div class="lista">
 <!-- Acá mostraremos el listado de productos -->
     </div>
-    
-    <div class="box-botones">
+    <div class="boton-productos">
+
       <button class="button">VER MÁS PRODUCTOS</button>
-      <button class ="button" id="verCarrito">VER CARRITO</button>
     </div>
     
-    <div class="tarjetas" id="mostrar-carrito">
+    <div class="box-botones">
+      <button class ="button" id="eliminarCarrito" disabled>BORRAR CARRITO</button>
+      <button class ="button" id="verCarrito">VER CARRITO</button>
+      <button class ="button oculto" id="agregarAlCarrito">AGREGAR PRODUCTOS</button>
+
+    </div>
+    
+    <div class="carrito-compra oculto" id="mostrar-carrito">
       <!-- Acá mostraremos el carrito -->
     </div>
     

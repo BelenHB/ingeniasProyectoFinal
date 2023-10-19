@@ -84,7 +84,6 @@ inputs.forEach((input) => {
 // Se ejecuta al presionar enviar
 formulario.addEventListener('submit', (e) => {
   e.preventDefault();
- 
 
 // Modificación del div de formulario al presionar enviar
   let inputNombre = document.querySelector("input#nombre").value;
