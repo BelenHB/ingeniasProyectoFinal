@@ -23,7 +23,6 @@ let productosJson = `[
 ]`;
 
 let productosArray = JSON.parse(productosJson);
-// console.log(productosArray);
 
 // Visualizar los productos en el HTML
 for (let i=0; i<productosArray.length; i++) {
@@ -66,15 +65,49 @@ let carrito = [];
 function agregarAlCarrito(botonClickeado) {
   let productosElegidos = [];
   productosElegidos.push(botonClickeado.target.getAttribute("prodId"));
-  // console.log(productosElegidos);
   let numeroProducto = Number(botonClickeado.target.getAttribute("prodId"));
-  // console.log(numeroProducto);
   carrito.push(productosArray[numeroProducto]);
-  // console.log(productosArray[numeroProducto]);
-  // console.log(carrito);
+  document.getElementById('verCarrito').disabled = false;
+  console.log(carrito);
   return carrito; 
 }
 
+function armarCarrito () {
+  document.querySelector("#mostrar-carrito").classList.remove('oculto');
+  let comprado = document.createElement("div");
+  comprado.className = "listado-compra";
+  let tituloCompra = document.createElement("h5");
+  tituloCompra.className = 'titulo-carrito';
+  tituloCompra.innerText ="TU CARRITO CONTIENE:";
+  let listaCompra = document.createElement("ul");
+  for (let x=0; x<carrito.length;x++) {
+    listaCompra.innerHTML += `<li>
+    <img src="${carrito[x].imagen}" width="50px" height="50px" alt="">
+    <p>${carrito[x].nombreProducto}</p>
+    <p>1 u.</p>
+    <p>$${carrito[x].precio}</p>
+    </li>`;
+  };
+  
+  // Para ver el importe total de la compra:
+  let totalDeCompra = document.createElement('h5');
+  let total = 0;
+  for (let x=0; x<carrito.length;x++) {
+    let importe = Number(carrito[x].precio);
+    total += importe;
+  };
+  totalDeCompra.innerText = `El total de tu compra es $${total}`;
+  
+  // Se agregan los elem creado al html con el contenido
+  let divCompra = document.querySelector("#mostrar-carrito");
+  divCompra.appendChild(tituloCompra);
+  divCompra.appendChild(comprado);
+  comprado.appendChild(listaCompra);
+  comprado.appendChild(totalDeCompra);
+};
+
+
+// Visualización del carrito:
 let verCarrito = document.getElementById("verCarrito");
 
 verCarrito.onclick = function () {
@@ -85,68 +118,44 @@ verCarrito.onclick = function () {
     document.getElementById("eliminarCarrito").disabled = true;
   };
 
-// Armado del html para visualizar el carrito
-  document.querySelector("#mostrar-carrito").classList.remove('oculto');
-  let comprado = document.createElement("div");
-  comprado.className = "listado-compra";
-  // console.log(carrito);
-  let tituloCompra = document.createElement("h5");
-  tituloCompra.className = 'titulo-carrito';
-  tituloCompra.innerText ="TU CARRITO CONTIENE:";
-  let listaCompra = document.createElement("ul");
-  for (let x=0; x<carrito.length;x++) {
-    // let productosComprados = document.createElement("li");
-    // productosComprados.innerHTML = carrito[x].nombreProducto;
-    // listaCompra.appendChild(productosComprados);
-    listaCompra.innerHTML += `<li>
-    <img src="${carrito[x].imagen}" width="50px" height="50px" alt="">
-    <p>${carrito[x].nombreProducto}</p>
-    <p>1 u.</p>
-    <p>$${carrito[x].precio}</p>
-  </li>`;
-  }
-
-  let totalDeCompra = document.createElement('h5');
-  let total = 0;
-  for (let x=0; x<carrito.length;x++) {
-    let importe = Number(carrito[x].precio);
-    console.log(importe);
-    console.log(typeof(importe));
-    console.log(x);
-    total += importe;
-  };
-  totalDeCompra.innerText = `El total de tu compra es $${total}`;
-
-  // document.querySelector("#mostrar-carrito")
-  let divCompra = document.querySelector("#mostrar-carrito");
-  divCompra.appendChild(tituloCompra);
-
-  divCompra.appendChild(comprado);
- 
-  comprado.appendChild(listaCompra);
-
-  comprado.appendChild(totalDeCompra);
-  
-  // verCarrito.disabled = true;
-  // o podría ocultarse y aparecer el de agregar
-  // faltaría hacer la función agregar
-  // document.getElementById('agregarAlCarrito').classList.remove('oculto');
-
+  armarCarrito();
+  // Oculto el botón 'VER CARRITO' y visualizo el 'AGREGAR PRODUCTOS'
+  document.getElementById('verCarrito').classList.add('oculto');
+  document.getElementById('agregarProductos').classList.remove('oculto');
 };
+
+// Si ya tengo un carrito y le quiero agregar productos:
+let agregarProductosAlCarrito = document.getElementById('agregarProductos');
+agregarProductosAlCarrito.onclick = function () {
+  // Elimimo el carrito previo y vuelvo a visualizar
+  document.querySelector("#mostrar-carrito").removeChild(document.querySelector('.titulo-carrito'));
+  document.querySelector("#mostrar-carrito").removeChild(document.querySelector('.listado-compra'));
+  armarCarrito();
+  };
+ 
+  
 
 // Ejecución de BORRAR CARRITO
 let borrarCarrito = document.getElementById("eliminarCarrito");
 
 borrarCarrito.onclick = function (e) {
   e.preventDefault();
-  // console.log(carrito);
   for (let i = 0;carrito.length;i++) {
     carrito.pop();
   }
-  // console.log(carrito);
+  
   document.querySelector("#mostrar-carrito").removeChild(document.querySelector('.titulo-carrito'));
   document.querySelector("#mostrar-carrito").removeChild(document.querySelector('.listado-compra'));
   document.querySelector("#mostrar-carrito").classList.add('oculto');
+  document.getElementById('verCarrito').classList.remove('oculto');
+  document.getElementById('agregarProductos').classList.add('oculto');
+  document.getElementById('verCarrito').disabled = true;
+  document.getElementById("eliminarCarrito").disabled = true;
 };
 
+// Botón VER MÁS PRODUCTOS
+let verMasProductos = document.getElementById('mas-productos');
 
+verMasProductos.addEventListener('click', () => {
+  alert('Por el momento no tenemos más productos disponibles.');
+});
