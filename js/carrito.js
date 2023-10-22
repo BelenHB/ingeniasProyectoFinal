@@ -104,6 +104,8 @@ function armarCarrito () {
   divCompra.appendChild(comprado);
   comprado.appendChild(listaCompra);
   comprado.appendChild(totalDeCompra);
+  // Se habilita el botón CONFIRMAR COMPRA: 
+  document.getElementById('confirmar-compra').classList.remove('oculto');
 };
 
 
@@ -149,6 +151,8 @@ borrarCarrito.onclick = function (e) {
   document.querySelector("#mostrar-carrito").classList.add('oculto');
   document.getElementById('verCarrito').classList.remove('oculto');
   document.getElementById('agregarProductos').classList.add('oculto');
+  document.getElementById('confirmar-compra').classList.add('oculto');
+
   document.getElementById('verCarrito').disabled = true;
   document.getElementById("eliminarCarrito").disabled = true;
 };
@@ -158,4 +162,11 @@ let verMasProductos = document.getElementById('mas-productos');
 
 verMasProductos.addEventListener('click', () => {
   alert('Por el momento no tenemos más productos disponibles.');
+});
+
+// Botón CONFIRMAR COMPRA
+let confirmarCompra = document.getElementById('confirmar-compra');
+
+confirmarCompra.addEventListener('click', () => {
+  alert('Te redireccionaremos a la sección de pagos.\n¡Muchas gracias por tu compra!');
 });
